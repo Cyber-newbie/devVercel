@@ -10,7 +10,7 @@ import {
 //get current profile
 export const getCurrentProfile = () => async dispatch => {
     dispatch(setProfileLoading())
-    const profile = await fetch("/api/profile", {
+    const profile = await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile", {
         headers: {
             Authorization: localStorage.jwtToken
         }
@@ -32,7 +32,7 @@ export const getCurrentProfile = () => async dispatch => {
 //get profile by handle
 export const getProfileByHandle = (handle) => async dispatch => {
     dispatch(setProfileLoading())
-    const profile = await fetch(`/api/profile/${handle}`)
+    const profile = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile/${handle}`)
     const newProfile = await profile.json()
     if (newProfile) {
         dispatch({
@@ -49,7 +49,7 @@ export const getProfileByHandle = (handle) => async dispatch => {
 
 
 export const createProfile = (profileData) => async dispatch => {
-    const profile = await fetch("/api/profile", {
+    const profile = await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile", {
         method: "POST",
         headers: {
             Authorization: localStorage.jwtToken,
@@ -87,7 +87,7 @@ export const createProfile = (profileData) => async dispatch => {
 
 export const addExperience = (addExp, navigate) => async dispatch => {
 
-    const added = await fetch("/api/profile/experience", {
+    const added = await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile/experience", {
         method: "POST",
         headers: {
             Authorization: localStorage.jwtToken,
@@ -115,7 +115,7 @@ export const addExperience = (addExp, navigate) => async dispatch => {
 
 export const addEducation = (addEdu, navigate) => async dispatch => {
 
-    const added = await fetch("/api/profile/education", {
+    const added = await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile/education", {
         method: "POST",
         headers: {
             Authorization: localStorage.jwtToken,
@@ -145,7 +145,7 @@ export const deleteExperience = (id) => async dispatch => {
     //API to delete an experience from user's profile
 
     try {
-        const profile = await fetch(`/api/profile/experience/${id}`, {
+        const profile = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile/experience/${id}`, {
             method: "DELETE",
             headers: {
                 Authorization: localStorage.jwtToken,
@@ -181,7 +181,7 @@ export const deleteEducation = (id) => async dispatch => {
     //API to delete an Education from user's profile
 
     try {
-        const profile = await fetch(`/api/profile/education/${id}`, {
+        const profile = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile/education/${id}`, {
             method: "DELETE",
             headers: {
                 Authorization: localStorage.jwtToken,
@@ -216,7 +216,7 @@ export const getProfiles = () => async dispatch => {
     //get all the profiles
     dispatch(setProfileLoading())
     try {
-        const profiles = await fetch(`/api/profile/all`, {
+        const profiles = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile/all`, {
             method: "GET"
             // mode: "no-cors",
         })
@@ -242,7 +242,7 @@ export const getProfiles = () => async dispatch => {
 export const deleteAccount = () => async dispatch => {
     if (window.confirm('Are you sure? this cannot be undone!')) {
         try {
-            await fetch("/api/profile", {
+            await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/profile", {
                 method: "DELETE",
                 headers: {
                     Authorization: localStorage.jwtToken,

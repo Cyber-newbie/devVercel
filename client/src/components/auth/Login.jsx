@@ -88,7 +88,11 @@ const Login = (props) => {
                 error={errors.password}
               />
 
-              <input type="submit" className="btn btn-info btn-block mt-4" />
+              <input
+                type="submit"
+                className="btn btn-info btn-block mt-4"
+                value="Log In"
+              />
             </form>
           </div>
         </div>

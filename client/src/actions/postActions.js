@@ -9,7 +9,7 @@ import {
 } from "../type"
 
 export const addPost = (postData) => async dispatch => {
-    const post = await fetch("/api/posts", {
+    const post = await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/posts", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export const addPost = (postData) => async dispatch => {
 export const getPosts = () => async dispatch => {
 
     setLoading()
-    const posts = await fetch("/api/posts")
+    const posts = await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/posts")
     if (posts.ok) {
         const newPost = await posts.json()
         dispatch({
@@ -70,7 +70,7 @@ export const getPosts = () => async dispatch => {
 export const getPost = (id) => async dispatch => {
 
     setLoading()
-    const posts = await fetch(`/api/posts/${id}`)
+    const posts = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/posts/${id}`)
     if (posts.ok) {
         const newPost = await posts.json()
         dispatch({
@@ -98,7 +98,7 @@ export const getPost = (id) => async dispatch => {
 export const deletePost = (id) => async dispatch => {
 
     setLoading()
-    const posts = await fetch(`/api/posts/${id}`, {
+    const posts = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/posts/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -129,7 +129,7 @@ export const deletePost = (id) => async dispatch => {
 
 export const addLike = (id) => async dispatch => {
 
-    const posts = await fetch(`/api/posts/like/${id}`, {
+    const posts = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/posts/like/${id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -157,7 +157,7 @@ export const addLike = (id) => async dispatch => {
 
 export const removeLike = (id) => async dispatch => {
 
-    const posts = await fetch(`/api/posts/unlike/${id}`, {
+    const posts = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/posts/unlike/${id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -184,7 +184,7 @@ export const removeLike = (id) => async dispatch => {
 //add comment to post
 export const addComment = (postId, commentData) => async dispatch => {
 
-    const post = await fetch(`/api/posts/comment/${postId}`, {
+    const post = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/posts/comment/${postId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -216,7 +216,7 @@ export const addComment = (postId, commentData) => async dispatch => {
 export const deleteComment = (postId, commentId) => async dispatch => {
 
     setLoading()
-    const posts = await fetch(`/api/posts/comment/${postId}/${commentId}`, {
+    const posts = await fetch(`https://dev-vercel-hassan-haiders-projects.vercel.app/api/posts/comment/${postId}/${commentId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",

@@ -5,7 +5,7 @@ import {
 } from "../type";
 import jwt_decode from 'jwt-decode'
 export const registerUser = (userData, navigate) => async dispatch => {
-    const user = await fetch("/api/users/register", {
+    const user = await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/users/register", {
         method: "POST",
         headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -38,7 +38,7 @@ export const registerUser = (userData, navigate) => async dispatch => {
 
 export const loginUser = userData => async dispatch => {
 
-    const user = await fetch("/api/users/login", {
+    const user = await fetch("https://dev-vercel-hassan-haiders-projects.vercel.app/api/users/login", {
         method: "POST",
         headers: {
             "Content-type": "application/json; charset=UTF-8",
