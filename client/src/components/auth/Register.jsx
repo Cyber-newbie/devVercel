@@ -108,7 +108,7 @@ const Register = (props) => {
 
             <button
               type="submit"
-              className="bg-orange-500 text-white font-bold py-2 px-4 w-full rounded mt-4"
+              className="btn btn-info btn-block mt-4 text-white font-bold py-2 px-4 w-full rounded mt-4"
             >
               Sign Up
             </button>
