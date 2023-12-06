@@ -66,7 +66,7 @@ const Register = (props) => {
         <div className="mx-auto max-w-md">
           <h1 className="text-4xl font-bold text-center mb-4">Sign Up</h1>
           <p className="text-lg text-center mb-6">
-            Create your NewsRead account
+            Create your devConnector account
           </p>
           <form onSubmit={submitHandler}>
             <TextFieldGroup
